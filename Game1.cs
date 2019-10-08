@@ -3,6 +3,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using Diver_Down.Def;
+using Diver_Down.Device;
+using Diver_Down.Scene;
+using Diver_Down.Utility;
+
+using System.Collections.Generic;
+
+
+
 /// <summary>
 /// プロジェクト名がnamespaceとなります
 /// </summary>
@@ -16,7 +25,9 @@ namespace Diver_Down
     {
         // フィールド（このクラスの情報を記述）
         private GraphicsDeviceManager graphicsDeviceManager;//グラフィックスデバイスを管理するオブジェクト
-        private SpriteBatch spriteBatch;//画像をスクリーン上に描画するためのオブジェクト
+        private SceneManager sceneManager;
+        private GameDevice gameDevice;
+        private Renderer renderer;
 
         /// <summary>
         /// コンストラクタ
@@ -28,6 +39,10 @@ namespace Diver_Down
             graphicsDeviceManager = new GraphicsDeviceManager(this);
             //コンテンツデータ（リソースデータ）のルートフォルダは"Contentに設定
             Content.RootDirectory = "Content";
+
+            //画面サイズ設定
+            graphicsDeviceManager.PreferredBackBufferWidth = Screen.Width;
+            graphicsDeviceManager.PreferredBackBufferHeight = Screen.Height;
         }
 
         /// <summary>
@@ -36,7 +51,14 @@ namespace Diver_Down
         protected override void Initialize()
         {
             // この下にロジックを記述
-
+            //ゲームデバイスの実体を取得
+            gameDevice = GameDevice.Instance(Content, GraphicsDevice);
+            sceneManager = new SceneManager();
+            sceneManager.Add(Scene.Scene.Load, new Load());
+            sceneManager.Add(Scene.Scene.Title, new Title());
+            sceneManager.Add(Scene.Scene.GamePlay, new GamePlay());
+            sceneManager.Add(Scene.Scene.GameOver, new GameOver());
+            sceneManager.Change(Scene.Scene.Load);
 
 
             // この上にロジックを記述
@@ -49,12 +71,22 @@ namespace Diver_Down
         /// </summary>
         protected override void LoadContent()
         {
-            // 画像を描画するために、スプライトバッチオブジェクトの実体生成
-            spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // この下にロジックを記述
+            renderer = gameDevice.GetRenderer();
 
+            renderer.LoadContent("load", "./Texture/");
+            renderer.LoadContent("number", "./Texture/");
 
+            //１ピクセルの黒色の画像を生成しレンダラーに登録
+            Texture2D fade = new Texture2D(GraphicsDevice, 1, 1);
+            Color[] colors = new Color[1 * 1];
+            colors[0] = new Color(0, 0, 0);
+            fade.SetData(colors);
+            renderer.LoadContent("fade", fade);
+
+            Sound sound = gameDevice.GetSound();
+            string filepath = "./Sound/";
+            //sound.LoadBGM("titlebgm", filepath);
             // この上にロジックを記述
         }
 
@@ -83,8 +115,12 @@ namespace Diver_Down
             {
                 Exit();
             }
+            gameDevice.Update(gameTime);
 
             // この下に更新ロジックを記述
+
+            sceneManager.Update(gameTime);
+
 
             // この上にロジックを記述
             base.Update(gameTime); // 親クラスの更新処理呼び出し。絶対に消すな！！
@@ -97,10 +133,11 @@ namespace Diver_Down
         protected override void Draw(GameTime gameTime)
         {
             // 画面クリア時の色を設定
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // この下に描画ロジックを記述
-
+            sceneManager.Draw(renderer);
 
             //この上にロジックを記述
             base.Draw(gameTime); // 親クラスの更新処理呼び出し。絶対に消すな！！
