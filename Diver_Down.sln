@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diver_Down", "Diver_Down.csproj", "{C739C37A-AC8E-4BF4-AE9D-018049B0CCE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C739C37A-AC8E-4BF4-AE9D-018049B0CCE2}.Debug|x86.ActiveCfg = Debug|x86
+		{C739C37A-AC8E-4BF4-AE9D-018049B0CCE2}.Debug|x86.Build.0 = Debug|x86
+		{C739C37A-AC8E-4BF4-AE9D-018049B0CCE2}.Release|x86.ActiveCfg = Release|x86
+		{C739C37A-AC8E-4BF4-AE9D-018049B0CCE2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56F682A9-7346-4D16-A3E8-9D48A6DB8076}
+	EndGlobalSection
+EndGlobal
