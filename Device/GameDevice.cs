@@ -22,6 +22,7 @@ namespace Diver_Down.Device
         private ContentManager content;
         private GraphicsDevice graphics;
         private GameTime gameTime;
+        private Vector2 displayMobilify;
 
         ///<summary>コンストラクタ</summary>
         ///<param name="content"></param>
@@ -101,6 +102,14 @@ namespace Diver_Down.Device
         public GameTime GetGameTime()
         {
             return gameTime;
+        }
+        public void SetDisplayMobilify(Vector2 postion)
+        {
+            this.displayMobilify = postion;
+        }
+        public Vector2 GetDisplayMobilify()
+        {
+            return displayMobilify;
         }
     }
 }
