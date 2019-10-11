@@ -19,6 +19,7 @@ namespace Diver_Down.Actor
         private Vector2 slideModify;
         private bool gool;
         private Motion motion;
+        private float hp;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
                : base("tori", position, 32, 32, gameDevice)
         {
@@ -47,8 +48,9 @@ namespace Diver_Down.Actor
         }
         public override void Updata(GameTime gameTime)
         {
-            
-            position = position + velocity + slideModify;
+            if (!Input.IsKeyDown(Keys.Space))
+                velocity.Y += 0.8f;
+            position = position + velocity;
             setDisplayModify();
             UpdateMotion();
         }
@@ -57,12 +59,7 @@ namespace Diver_Down.Actor
             Direction dir = CheckDirection(gameObject);
             if (dir == Direction.Top)
             {
-                if (position.Y > 0.0f)
-                {
-                    position.Y = gameObject.getRectangle().Top - height;
-                    velocity.Y = 0.0f;
-                    isJump = false;
-                }
+                position.Y = gameObject.getRectangle().Top - height;
             }
             else if (dir == Direction.Right)
             {
@@ -75,13 +72,8 @@ namespace Diver_Down.Actor
             else if (dir == Direction.Bottom)
             {
                 position.Y = gameObject.getRectangle().Bottom;
-                if (isJump)
-                {
-                    velocity.Y = 0.0f;
-                }
             }
             setDisplayModify();
-            setSlideModify(gameObject);
         }
         private void setDisplayModify()
         {
@@ -94,11 +86,6 @@ namespace Diver_Down.Actor
             {
                 gameDevice.SetDisplayMobilify(new Vector2(-mediator.MapX() * width + Screen.Width, 0));
             }
-        }
-        private void setSlideModify(GameObject gameObject)
-        {
-            Direction dir = this.CheckDirection(gameObject);
-            slideModify = Vector2.Zero;
         }
         public override void Draw(Renderer renderer)
         {
@@ -117,6 +104,10 @@ namespace Diver_Down.Actor
             {
                 motion.Initialize(new Range(1, 1), new CountDownTimer());
             }
+        }
+        public float GetGage()
+        {
+            return hp;
         }
     }
 }
