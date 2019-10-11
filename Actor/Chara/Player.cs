@@ -14,8 +14,10 @@ namespace Diver_Down.Actor
     class Player : GameObject
     {
         private Vector2 velocity;
-        private float ySpeed;
-        private float xSpeed;
+        private float yVectol;
+        private float xVectol;
+        private float ySpeedMax;
+        private float xSpeedMax;
         private IGameObjectMediator mediator;
         private Vector2 slideModify;
         private bool gool;
@@ -27,6 +29,10 @@ namespace Diver_Down.Actor
             velocity = Vector2.Zero;
             this.mediator = mediator;
             slideModify = Vector2.Zero;
+            yVectol=0.8f;
+            xVectol=0.8f;
+            ySpeedMax=8;
+            xSpeedMax=8;
             gool = false;
             motion = new Motion();
             for (int i = 0; i < 2; i++)
@@ -49,16 +55,16 @@ namespace Diver_Down.Actor
         public override void Updata(GameTime gameTime)
         {
             if (!Input.IsKeyDown(Keys.Space))
-                velocity.Y -= 0.8f;
+                velocity.Y -= yVectol;
             else
             {
-                velocity.Y += 0.8f;
+                velocity.Y += yVectol;
                 velocity.X += 0.2f;
             }
             if (Input.IsKeyUp(Keys.Space))
-                velocity.X += 5f;
-            velocity.Y = (velocity.Y < ySpeed) ? ySpeed : velocity.Y;
-            velocity.X = (velocity.X < xSpeed) ? xSpeed : velocity.X;
+                velocity.X += xVectol;
+            velocity.Y = (velocity.Y < ySpeedMax) ? ySpeedMax : velocity.Y;
+            velocity.X = (velocity.X < xSpeedMax) ? xSpeedMax : velocity.X;
             position = position + velocity;
             setDisplayModify();
             UpdateMotion();
@@ -113,10 +119,6 @@ namespace Diver_Down.Actor
             {
                 motion.Initialize(new Range(1, 1), new CountDownTimer());
             }
-        }
-        public float GetGage()
-        {
-            return hp;
         }
     }
 }
