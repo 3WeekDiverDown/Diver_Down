@@ -47,26 +47,7 @@ namespace Diver_Down.Actor
         }
         public override void Updata(GameTime gameTime)
         {
-            if ((isJump == false) &&
-                (Input.GetKeyTrigger(Keys.Space)))
-            {
-                //8.0
-                velocity.Y = -6.0f;
-                isJump = true;
-            }
-            else
-            {
-                //0.4
-                velocity.Y += 0.2f;
-                velocity.Y = (velocity.Y > 16.0f) ? (16.0f) : (velocity.Y);
-            }
-            float speed = 4.0f;
-            //if(Input.GetKeyTrigger(Keys.X))
-            //{
-            //    isDeadFlag = true;
-            //}
-
-            velocity.X = Input.Velocity().X * speed;
+            
             position = position + velocity + slideModify;
             setDisplayModify();
             UpdateMotion();
