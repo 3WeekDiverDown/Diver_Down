@@ -22,7 +22,7 @@ namespace Diver_Down.Scene
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-           
+            renderer.DrawTexture("load", new Vector2(200, 200   ));
             renderer.End();
         }
 
