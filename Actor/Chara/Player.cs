@@ -14,7 +14,8 @@ namespace Diver_Down.Actor
     class Player : GameObject
     {
         private Vector2 velocity;
-        private bool isJump;
+        private float ySpeed;
+        private float xSpeed;
         private IGameObjectMediator mediator;
         private Vector2 slideModify;
         private bool gool;
@@ -24,7 +25,6 @@ namespace Diver_Down.Actor
                : base("tori", position, 32, 32, gameDevice)
         {
             velocity = Vector2.Zero;
-            isJump = true;
             this.mediator = mediator;
             slideModify = Vector2.Zero;
             gool = false;
@@ -49,7 +49,16 @@ namespace Diver_Down.Actor
         public override void Updata(GameTime gameTime)
         {
             if (!Input.IsKeyDown(Keys.Space))
+                velocity.Y -= 0.8f;
+            else
+            {
                 velocity.Y += 0.8f;
+                velocity.X += 0.2f;
+            }
+            if (Input.IsKeyUp(Keys.Space))
+                velocity.X += 5f;
+            velocity.Y = (velocity.Y < ySpeed) ? ySpeed : velocity.Y;
+            velocity.X = (velocity.X < xSpeed) ? xSpeed : velocity.X;
             position = position + velocity;
             setDisplayModify();
             UpdateMotion();
