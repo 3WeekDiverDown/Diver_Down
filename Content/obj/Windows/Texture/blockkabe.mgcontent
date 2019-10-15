@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/!K018A1402/2年/後期/チーム製作10月/Content/Texture/blockkabe.png</SourceFile>
-  <SourceTime>2019-10-15T13:14:38.5368417+09:00</SourceTime>
-  <DestFile>D:/!K018A1402/2年/後期/チーム製作10月/Content/bin/Windows/Texture/blockkabe.xnb</DestFile>
-  <DestTime>2019-10-15T13:21:44.2175119+09:00</DestTime>
+  <SourceFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/blockkabe.png</SourceFile>
+  <SourceTime>2019-10-15T10:44:51.9686608+09:00</SourceTime>
+  <DestFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/bin/Windows/Texture/blockkabe.xnb</DestFile>
+  <DestTime>2019-10-15T14:11:19.5736704+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-02T00:05:36+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
