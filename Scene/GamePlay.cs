@@ -18,20 +18,17 @@ namespace Diver_Down.Scene
         GameObjectManager gameObjectManager;
         Player player;
         string backScreen;
-        Sound sound;
-
+        Timer timer;
         public GamePlay()
         {
             isEndFlag = false;
-            var gameDevice = GameDevice.Instance();
-            sound = gameDevice.GetSound();
             gameObjectManager = new GameObjectManager();
         }
 
         public void Draw(Renderer renderer)
         {
             renderer.Begin();
-            //renderer.DrawTexture(backScreen, Vector2.Zero, null, new Vector2(0.75f, 0.75f), true);
+            renderer.DrawTexture("HK2", Vector2.Zero);
             map.Draw(renderer);
             gameObjectManager.Draw(renderer);
             renderer.End();
@@ -44,11 +41,7 @@ namespace Diver_Down.Scene
             map = new Map(GameDevice.Instance());
             player = new Player(new Vector2(32 * 2, 32 * 10), GameDevice.Instance(),gameObjectManager);
             gameObjectManager.Add(player);
-            //if (stage == Stage.Base)
-            //{
             map.Load("map.csv", "./csv/");
-            //    backScreen = "Home";
-            //}
             gameObjectManager.Add(map);
         }
 
@@ -66,9 +59,8 @@ namespace Diver_Down.Scene
         }
         public void Update(GameTime gameTime)
         {
-            //sound.PlayBGM("");
             map.Update(gameTime);
-            if (Input.GetKeyTrigger(Keys.X))
+            if (player.IsDead())
                 isEndFlag = true;
             gameObjectManager.Update(gameTime);
         }

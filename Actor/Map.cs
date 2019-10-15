@@ -80,8 +80,8 @@ namespace Diver_Down.Actor
         public void Hit(GameObject gameObject)
         {
             Point work = gameObject.getRectangle().Location;
-            int x = work.X / 32;
-            int y = work.Y / 32;
+            int x = work.X / 64;
+            int y = work.Y / 64;
             if (x < 1)
             {
                 x = 1;
