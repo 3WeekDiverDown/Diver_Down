@@ -24,22 +24,22 @@ namespace Diver_Down.Actor
         private Motion motion;
         private float hp;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-               : base("player", position, 32, 32, gameDevice)
+               : base("Player1", position, 32, 32, gameDevice)
         {
             velocity = Vector2.Zero;
             this.mediator = mediator;
             slideModify = Vector2.Zero;
             yVectol=0.1f;
             xVectol=2f;
-            ySpeedMax=8;
+            ySpeedMax=4;
             xSpeedMax=8;
             gool = false;
-            motion = new Motion();
-            for (int i = 0; i < 2; i++)
-            {
-                motion.Add(i, new Rectangle(32, 32 * (i / 2), 32, 32));
-            }
-            motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
+            //motion = new Motion();
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    motion.Add(i, new Rectangle(32, 32 * (i / 2), 32, 32));
+            //}
+            //motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -50,7 +50,8 @@ namespace Diver_Down.Actor
         }
         public override void Hit(GameObject gameObject)
         {
-
+            if (gameObject is Block)
+                hitBlock(gameObject);
         }
         public override void Updata(GameTime gameTime)
         {
@@ -68,10 +69,10 @@ namespace Diver_Down.Actor
             velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
             position = position + velocity;
             if (velocity.X >= 0)
-                velocity.X -= 0.1f;
+                velocity.X -= 0.07f;
             setDisplayModify();
             hp -= 1;
-            UpdateMotion();
+            //UpdateMotion();
         }
         private void hitBlock(GameObject gameObject)
         {
@@ -79,6 +80,7 @@ namespace Diver_Down.Actor
             if (dir == Direction.Top)
             {
                 position.Y = gameObject.getRectangle().Top - height;
+                velocity.Y = 0;
             }
             else if (dir == Direction.Right)
             {
@@ -91,6 +93,7 @@ namespace Diver_Down.Actor
             else if (dir == Direction.Bottom)
             {
                 position.Y = gameObject.getRectangle().Bottom;
+                velocity.Y = 0;
             }
             setDisplayModify();
         }
@@ -98,17 +101,13 @@ namespace Diver_Down.Actor
         {
             gameDevice.SetDisplayMobilify(new Vector2(-position.X + (Screen.Width / 2 - width / 2), 0.0f));
             if (position.X < Screen.Width / 2 - width / 2)
-            {
                 gameDevice.SetDisplayMobilify(Vector2.Zero);
-            }
             if (position.X > mediator.MapX() * width - Screen.Width / 2 - width / 2)
-            {
                 gameDevice.SetDisplayMobilify(new Vector2(-mediator.MapX() * width + Screen.Width, 0));
-            }
         }
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position, motion.DrawingRange());
+            renderer.DrawTexture(name, position+gameDevice.GetDisplayMobilify()/*,motion.DrawingRange()*/);
         }
         private void UpdateMotion()
         {
