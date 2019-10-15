@@ -66,7 +66,7 @@ namespace Diver_Down.Scene
         }
         public void Update(GameTime gameTime)
         {
-            sound.PlayBGM("");
+            //sound.PlayBGM("");
             map.Update(gameTime);
             if (Input.GetKeyTrigger(Keys.X))
                 isEndFlag = true;

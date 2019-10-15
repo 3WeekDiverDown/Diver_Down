@@ -55,7 +55,7 @@ namespace Diver_Down.Scene
             if(Input.GetKeyTrigger(Keys.Space))
             {
                 isEndFlag = true;
-                sound.PlaySE("");
+                //sound.PlaySE("");
             }
         }
     }
