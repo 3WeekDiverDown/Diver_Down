@@ -18,9 +18,13 @@ namespace Diver_Down.Scene
         GameObjectManager gameObjectManager;
         Player player;
         string backScreen;
+        Sound sound;
+
         public GamePlay()
         {
             isEndFlag = false;
+            var gameDevice = GameDevice.Instance();
+            sound = gameDevice.GetSound();
             gameObjectManager = new GameObjectManager();
         }
 
@@ -62,6 +66,7 @@ namespace Diver_Down.Scene
         }
         public void Update(GameTime gameTime)
         {
+            sound.PlayBGM("");
             map.Update(gameTime);
             if (Input.GetKeyTrigger(Keys.X))
                 isEndFlag = true;
