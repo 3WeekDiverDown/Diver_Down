@@ -163,7 +163,6 @@ namespace Diver_Down.Device
                 Color.White * alpha);//透明値
         }
 
-
         /// <summary>
         /// 画像の描画
         /// </summary>

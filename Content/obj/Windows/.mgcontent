@@ -4,11 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/blockkabe.png</File>
+    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/HK2.jpg</File>
     <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/load.bmp</File>
     <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/number.bmp</File>
-    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/player.png</File>
-    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/blockkabe.png</File>
-    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/Player2.png</File>
-    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/Player1.png</File>
+    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/P1.png</File>
+    <File>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/P2.png</File>
   </SourceFiles>
 </SourceFileCollection>

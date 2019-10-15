@@ -24,7 +24,7 @@ namespace Diver_Down.Actor
         private Motion motion;
         private float hp;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-               : base("Player1", position, 32, 32, gameDevice)
+               : base("P2", position, 64, 64, gameDevice)
         {
             velocity = Vector2.Zero;
             this.mediator = mediator;
@@ -33,13 +33,14 @@ namespace Diver_Down.Actor
             xVectol=2f;
             ySpeedMax=4;
             xSpeedMax=8;
+            hp = 1000;
             gool = false;
-            //motion = new Motion();
-            //for (int i = 0; i < 2; i++)
-            //{
-            //    motion.Add(i, new Rectangle(32, 32 * (i / 2), 32, 32));
-            //}
-            //motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
+            motion = new Motion();
+            for (int i = 0; i < 2; i++)
+            {
+                motion.Add(i, new Rectangle(64, 64 * (i / 2), 64, 64));
+            }
+            motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -55,24 +56,27 @@ namespace Diver_Down.Actor
         }
         public override void Updata(GameTime gameTime)
         {
+            if (hp <= 0)
+                isDeadFlag = true;
             if (!Input.GetKeyState(Keys.Space))
                 velocity.Y -= yVectol;
             else
             {
                 velocity.Y += yVectol;
                 velocity.X += 0.1f;
-                hp -= 10;
             }
             if (Input.IsKeyUp(Keys.Space))
+            {
                 velocity.X += xVectol;
+                //hp -= 100;
+            }
             velocity.Y = (ySpeedMax < velocity.Y) ? ySpeedMax : velocity.Y;
             velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
             position = position + velocity;
             if (velocity.X >= 0)
                 velocity.X -= 0.07f;
             setDisplayModify();
-            hp -= 1;
-            //UpdateMotion();
+            UpdateMotion();
         }
         private void hitBlock(GameObject gameObject)
         {
@@ -107,7 +111,9 @@ namespace Diver_Down.Actor
         }
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position+gameDevice.GetDisplayMobilify()/*,motion.DrawingRange()*/);
+            renderer.DrawTexture(name,
+                position+gameDevice.GetDisplayMobilify(),
+                motion.DrawingRange());
         }
         private void UpdateMotion()
         {

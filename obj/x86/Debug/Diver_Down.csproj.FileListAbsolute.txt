@@ -25,8 +25,8 @@ D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\SharpDX.Direc
 D:\K018A1700\10月チーム制作\Diver_Down\obj\x86\Debug\Diver_Down.csproj.CopyComplete
 D:\K018A1700\10月チーム制作\Diver_Down\obj\x86\Debug\Diver_Down.exe
 D:\K018A1700\10月チーム制作\Diver_Down\obj\x86\Debug\Diver_Down.pdb
-D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\player.xnb
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\csv\map.csv
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\blockkabe.xnb
-D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\Player1.xnb
-D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\Player2.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\HK2.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\P1.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\P2.xnb
