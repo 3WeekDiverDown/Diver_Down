@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Diver_Down.Utility;
 using Diver_Down.Def;
 using Diver_Down.Device;
+using Diver_Down.Actor.Blocks;
 
 namespace Diver_Down.Actor
 {

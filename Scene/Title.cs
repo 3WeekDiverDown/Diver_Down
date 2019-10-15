@@ -14,11 +14,13 @@ namespace Diver_Down.Scene
     class Title : IScene
     {
         private bool isEndFlag;
+        private Sound sound;
 
         public Title()
         {
             isEndFlag = false;
-            
+            var gameDevice = GameDevice.Instance();
+            sound = gameDevice.GetSound();
         }
 
         public void Draw(Renderer renderer)
@@ -53,6 +55,7 @@ namespace Diver_Down.Scene
             if(Input.GetKeyTrigger(Keys.Space))
             {
                 isEndFlag = true;
+                sound.PlaySE("");
             }
         }
     }

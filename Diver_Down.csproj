@@ -41,7 +41,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Actor\Block\GoalBlock.cs" />
+    <Compile Include="Actor\Blocks\Block.cs" />
+    <Compile Include="Actor\Blocks\GoalBlock.cs" />
+    <Compile Include="Actor\Blocks\Space.cs" />
     <Compile Include="Actor\Chara\Player.cs" />
     <Compile Include="Actor\GameObject.cs" />
     <Compile Include="Actor\GameObjectID.cs" />
