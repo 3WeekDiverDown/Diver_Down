@@ -13,10 +13,13 @@ namespace Diver_Down.Scene
     class GameOver : IScene
     {
         bool isEndFlag;
+        Sound sound;
 
         public GameOver()
         {
             isEndFlag = false;
+            var gameDevice = GameDevice.Instance();
+            sound = gameDevice.GetSound();
         }
 
         public void Draw(Renderer renderer)
