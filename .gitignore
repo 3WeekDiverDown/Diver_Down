@@ -3,3 +3,6 @@
 仕様概要.txt
 ~$仕様書.xlsx
 .gitignore
+.vs/Diver_Down/v15/Server/sqlite3/db.lock
+.vs/
+Diver_Down.csproj
