@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/player.png</SourceFile>
-  <SourceTime>2019-10-15T10:44:51.9696566+09:00</SourceTime>
-  <DestFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/bin/Windows/Texture/player.xnb</DestFile>
-  <DestTime>2019-10-15T10:51:06.7485505+09:00</DestTime>
+  <SourceFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/Player1.png</SourceFile>
+  <SourceTime>2019-10-15T10:55:48.3142615+09:00</SourceTime>
+  <DestFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/bin/Windows/Texture/Player1.xnb</DestFile>
+  <DestTime>2019-10-15T10:57:51.3454509+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-02T00:05:36+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

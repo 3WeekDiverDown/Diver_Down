@@ -41,7 +41,10 @@ namespace Diver_Down.Scene
             string[,] data = new string[,]
             {
                 { "player", path},
+                { "Player1", path},
+                { "Player2", path},
                 {"blockkabe",path },
+
                 //必要に応じて自分で追加
             };
 

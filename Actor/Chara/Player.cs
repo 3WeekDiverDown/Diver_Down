@@ -24,7 +24,7 @@ namespace Diver_Down.Actor
         private Motion motion;
         private float hp;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-               : base("player", position, 32, 32, gameDevice)
+               : base("Player1", position, 32, 32, gameDevice)
         {
             velocity = Vector2.Zero;
             this.mediator = mediator;
@@ -34,12 +34,12 @@ namespace Diver_Down.Actor
             ySpeedMax=8;
             xSpeedMax=8;
             gool = false;
-            motion = new Motion();
-            for (int i = 0; i < 2; i++)
-            {
-                motion.Add(i, new Rectangle(32, 32 * (i / 2), 32, 32));
-            }
-            motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
+            //motion = new Motion();
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    motion.Add(i, new Rectangle(32, 32 * (i / 2), 32, 32));
+            //}
+            //motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
         }
         public Player(Player other)
             : this(other.position, other.gameDevice, other.mediator)
@@ -71,7 +71,7 @@ namespace Diver_Down.Actor
                 velocity.X -= 0.1f;
             setDisplayModify();
             hp -= 1;
-            UpdateMotion();
+            //UpdateMotion();
         }
         private void hitBlock(GameObject gameObject)
         {
@@ -108,7 +108,7 @@ namespace Diver_Down.Actor
         }
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position, motion.DrawingRange());
+            renderer.DrawTexture(name, position/*,motion.DrawingRange()*/);
         }
         private void UpdateMotion()
         {
