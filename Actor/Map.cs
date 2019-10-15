@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Diver_Down.Device;
 using Diver_Down.Utility;
-//using Diver_Down.Actor.Block;
+using Diver_Down.Actor.Blocks;
 
 namespace Diver_Down.Actor
 {
@@ -24,8 +24,8 @@ namespace Diver_Down.Actor
         private List<GameObject> addBlock(int lineCnt, string[] line)
         {
             Dictionary<string, GameObject> objctDict = new Dictionary<string, GameObject>();
-            //objctDict.Add("0", new Space(Vector2.Zero, gameDevice));
-            
+            objctDict.Add("0", new Space(Vector2.Zero, gameDevice));
+            objctDict.Add("1", new Block(Vector2.Zero, gameDevice));
             List<GameObject> workList = new List<GameObject>();
             int colCnt = 0;
             foreach (var s in line)
@@ -69,10 +69,10 @@ namespace Diver_Down.Actor
             {
                 foreach (var obj in list)
                 {
-                    //if (obj is Space)
-                    //{
-                    //    continue;
-                    //}
+                    if (obj is Space)
+                    {
+                        continue;
+                    }
                     obj.Updata(gameTime);
                 }
             }
@@ -80,8 +80,8 @@ namespace Diver_Down.Actor
         public void Hit(GameObject gameObject)
         {
             Point work = gameObject.getRectangle().Location;
-            int x = work.X / 128;
-            int y = work.Y / 128;
+            int x = work.X / 32;
+            int y = work.Y / 32;
             if (x < 1)
             {
                 x = 1;
@@ -103,10 +103,10 @@ namespace Diver_Down.Actor
                         continue;
                     }
                     GameObject obj = mapList[row][col];
-                    //if (obj is Space)
-                    //{
-                    //    continue;
-                    //}
+                    if (obj is Space)
+                    {
+                        continue;
+                    }
                     if (obj.IsCollision(gameObject))
                     {
                         gameObject.Hit(obj);
@@ -120,10 +120,10 @@ namespace Diver_Down.Actor
             {
                 foreach (var obj in list)
                 {
-                    //if (obj is Space||obj is NextSpace)
-                    //{
-                    //    continue;
-                    //}
+                    if (obj is Space)
+                    {
+                        continue;
+                    }
                     obj.Draw(renderer);
                 }
             }
