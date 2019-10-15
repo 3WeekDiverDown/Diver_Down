@@ -81,7 +81,7 @@ namespace Diver_Down.Device
         ///<returns>離された瞬間ならtrue</returns>
         public static bool IsKeyUp(Keys key)
         {
-            return currentKey.IsKeyUp(key);
+            return currentKey.IsKeyUp(key)&& !previousKey.IsKeyUp(key);
         }
         ///<summary>キーが押された瞬間か？</summary>
         ///<param name="Key">チェックしたいキー</param>

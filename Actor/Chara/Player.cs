@@ -24,13 +24,13 @@ namespace Diver_Down.Actor
         private Motion motion;
         private float hp;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-               : base("tori", position, 32, 32, gameDevice)
+               : base("player", position, 32, 32, gameDevice)
         {
             velocity = Vector2.Zero;
             this.mediator = mediator;
             slideModify = Vector2.Zero;
-            yVectol=0.8f;
-            xVectol=0.8f;
+            yVectol=0.1f;
+            xVectol=2f;
             ySpeedMax=8;
             xSpeedMax=8;
             gool = false;
@@ -54,19 +54,23 @@ namespace Diver_Down.Actor
         }
         public override void Updata(GameTime gameTime)
         {
-            if (!Input.IsKeyDown(Keys.Space))
+            if (!Input.GetKeyState(Keys.Space))
                 velocity.Y -= yVectol;
             else
             {
                 velocity.Y += yVectol;
-                velocity.X += 0.2f;
+                velocity.X += 0.1f;
+                hp -= 10;
             }
             if (Input.IsKeyUp(Keys.Space))
                 velocity.X += xVectol;
-            velocity.Y = (velocity.Y < ySpeedMax) ? ySpeedMax : velocity.Y;
-            velocity.X = (velocity.X < xSpeedMax) ? xSpeedMax : velocity.X;
+            velocity.Y = (ySpeedMax < velocity.Y) ? ySpeedMax : velocity.Y;
+            velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
             position = position + velocity;
+            if (velocity.X >= 0)
+                velocity.X -= 0.1f;
             setDisplayModify();
+            hp -= 1;
             UpdateMotion();
         }
         private void hitBlock(GameObject gameObject)
