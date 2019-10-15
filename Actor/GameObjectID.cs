@@ -9,10 +9,6 @@ namespace Diver_Down.Actor
     enum GameObjectID
     {
         Player,
-        Button_Red,
-        Button_Blue,
-        Door_Red,
-        Door_Blue,
         NONE,
     }
 }

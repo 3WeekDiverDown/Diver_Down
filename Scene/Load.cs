@@ -40,7 +40,11 @@ namespace Diver_Down.Scene
             //読み込み対象データ
             string[,] data = new string[,]
             {
-                //{ "haikei", path},
+                { "player", path},
+                { "Player1", path},
+                { "Player2", path},
+                {"blockkabe",path },
+
                 //必要に応じて自分で追加
             };
 

@@ -53,7 +53,7 @@ namespace Diver_Down.Actor
 
         public virtual void Draw(Renderer renderer)
         {
-            renderer.DrawTexture(name, position);
+            renderer.DrawTexture(name, position+gameDevice.GetDisplayMobilify());
         }
         public bool IsDead()
         {
