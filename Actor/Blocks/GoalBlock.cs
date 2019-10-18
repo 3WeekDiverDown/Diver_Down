@@ -13,7 +13,7 @@ namespace Diver_Down.Actor.Blocks
         private bool isGoalFlag = false;
 
         public GoalBlock(Vector2 pos, GameDevice gameDevice)
-            : base("blockkabe", pos, 32, 32, gameDevice)
+            : base("", pos, 64, 64, gameDevice)
         { }
         public GoalBlock(GoalBlock other)
             : this(other.position, other.gameDevice)

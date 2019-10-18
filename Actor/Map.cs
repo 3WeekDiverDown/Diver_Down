@@ -26,6 +26,7 @@ namespace Diver_Down.Actor
             Dictionary<string, GameObject> objctDict = new Dictionary<string, GameObject>();
             objctDict.Add("0", new Space(Vector2.Zero, gameDevice));
             objctDict.Add("1", new Block(Vector2.Zero, gameDevice));
+            objctDict.Add("2", new GoalBlock(Vector2.Zero, gameDevice));
             List<GameObject> workList = new List<GameObject>();
             int colCnt = 0;
             foreach (var s in line)
@@ -69,7 +70,7 @@ namespace Diver_Down.Actor
             {
                 foreach (var obj in list)
                 {
-                    if (obj is Space)
+                    if (obj is Space||obj is GoalBlock)
                     {
                         continue;
                     }
@@ -120,7 +121,7 @@ namespace Diver_Down.Actor
             {
                 foreach (var obj in list)
                 {
-                    if (obj is Space)
+                    if (obj is Space||obj is GoalBlock)
                     {
                         continue;
                     }

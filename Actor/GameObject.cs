@@ -62,12 +62,10 @@ namespace Diver_Down.Actor
         public Rectangle getRectangle()
         {
             Rectangle area = new Rectangle();
-
             area.X = (int)position.X;
             area.Y = (int)position.Y;
             area.Height = height;
             area.Width = width;
-
             return area;
         }
 

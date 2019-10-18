@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Actor\Blocks\Block.cs" />
     <Compile Include="Actor\Blocks\GoalBlock.cs" />
+    <Compile Include="Actor\Blocks\Rock.cs" />
     <Compile Include="Actor\Blocks\Space.cs" />
     <Compile Include="Actor\Chara\Player.cs" />
     <Compile Include="Actor\GameObject.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Utility\Motion.cs" />
     <Compile Include="Utility\Range.cs" />
     <Compile Include="Utility\Timer.cs" />
+    <Compile Include="Utility\TimerUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
