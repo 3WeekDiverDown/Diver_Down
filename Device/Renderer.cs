@@ -352,7 +352,7 @@ namespace Diver_Down.Device
                     spriteBatch.Draw(
                         textures[assetName],
                         position,
-                        new Rectangle(10 * width, 0, width, 32),//ピリオドは10番目
+                        new Rectangle(10 * width, 0, width, 64),//ピリオドは10番目
                         Color.White * alpha);
                 }
                 else
@@ -361,7 +361,7 @@ namespace Diver_Down.Device
                     spriteBatch.Draw(
                         textures[assetName],
                         position,
-                        new Rectangle((n - '0') * width, 0, width, 32),
+                        new Rectangle((n - '0') * width, 0, width, 64),
                         Color.White * alpha);
                 }
 

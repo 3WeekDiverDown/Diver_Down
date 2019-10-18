@@ -45,6 +45,7 @@ namespace Diver_Down.Scene
                 {"blockkabe",path },
                 {"brock1",path },
                 {"brock2",path },
+                {"timer",path },
 
 
                 //必要に応じて自分で追加

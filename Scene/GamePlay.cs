@@ -17,8 +17,8 @@ namespace Diver_Down.Scene
         Map map;
         GameObjectManager gameObjectManager;
         Player player;
-        string backScreen;
         Timer timer;
+        TimerUI timerUI;
         public GamePlay()
         {
             isEndFlag = false;
@@ -31,6 +31,7 @@ namespace Diver_Down.Scene
             renderer.DrawTexture("HK2", Vector2.Zero);
             map.Draw(renderer);
             gameObjectManager.Draw(renderer);
+            timerUI.Draw(renderer);
             renderer.End();
         }
 
@@ -42,6 +43,8 @@ namespace Diver_Down.Scene
             player = new Player(new Vector2(32 * 2, 32 * 10), GameDevice.Instance(),gameObjectManager);
             gameObjectManager.Add(player);
             map.Load("map.csv", "./csv/");
+            timer = new CountUpTimer(50000);
+            timerUI = new TimerUI(timer);
             gameObjectManager.Add(map);
         }
 
@@ -60,6 +63,7 @@ namespace Diver_Down.Scene
         public void Update(GameTime gameTime)
         {
             map.Update(gameTime);
+            timer.Update(gameTime);
             if (player.IsDead())
                 isEndFlag = true;
             if (player.GetGoal())
