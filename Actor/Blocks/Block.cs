@@ -11,7 +11,7 @@ namespace Diver_Down.Actor.Blocks
     class Block : GameObject
     {
         public Block(Vector2 pos, GameDevice gameDevice)
-            : base("blockkabe", pos, 64, 64, gameDevice)
+            : base("brock1", pos, 64, 64, gameDevice)
         { }
         public Block(Block other)
             : this(other.position, other.gameDevice)

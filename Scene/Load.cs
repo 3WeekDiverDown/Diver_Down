@@ -43,6 +43,7 @@ namespace Diver_Down.Scene
                 {"P2",path },
                 {"HK2",path },
                 {"blockkabe",path },
+                {"brock1",path },
 
                 //必要に応じて自分で追加
             };

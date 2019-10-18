@@ -24,6 +24,7 @@ namespace Diver_Down.Actor
         private bool gool;
         private Motion motion;
         private float hp;
+        bool change;
         public Player(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
                : base("P2", position, 64, 64, gameDevice)
         {
@@ -39,7 +40,7 @@ namespace Diver_Down.Actor
             motion = new Motion();
             for (int i = 0; i < 2; i++)
             {
-                motion.Add(i, new Rectangle(64, 64 * (i / 2), 64, 64));
+                motion.Add(i, new Rectangle(64, 66 * (i / 2), 64, 64));
             }
             motion.Initialize(new Range(0, 1), new CountDownTimer(1.0f));
         }
@@ -73,11 +74,10 @@ namespace Diver_Down.Actor
             }
             velocity.Y = (ySpeedMax < velocity.Y) ? ySpeedMax : velocity.Y;
             velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
-            position = position + velocity;
-            if (velocity.X >= 0)
+            if (velocity.X <= 0)
                 velocity.X -= 0.07f;
+            position = position + velocity;
             setDisplayModify();
-            UpdateMotion();
         }
         private void hitBlock(GameObject gameObject)
         {
@@ -118,17 +118,7 @@ namespace Diver_Down.Actor
         }
         private void UpdateMotion()
         {
-            Vector2 velocity = Input.Velocity();
-            if (velocity.Length() <= 0.0f)
-            { return; }
-            else if (velocity.X > 0.0f)
-            {
-                motion.Initialize(new Range(0, 0), new CountDownTimer());
-            }
-            else if (velocity.X < 0.0f)
-            {
-                motion.Initialize(new Range(1, 1), new CountDownTimer());
-            }
+            
         }
     }
 }
