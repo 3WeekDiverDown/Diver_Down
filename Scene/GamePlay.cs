@@ -62,6 +62,8 @@ namespace Diver_Down.Scene
             map.Update(gameTime);
             if (player.IsDead())
                 isEndFlag = true;
+            if (player.GetGoal())
+                isEndFlag = true;
             gameObjectManager.Update(gameTime);
         }
     }

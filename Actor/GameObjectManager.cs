@@ -116,11 +116,6 @@ namespace Diver_Down.Actor
         }
         public GameObject GetPlayer()
         {
-            //GameObject find = gameObjectList.Find(c => c is Player);
-            //if (find != null && !find.IsDead())
-            //{
-            //    return find;
-            //}
             return null;
         }
         public bool IsPlayerDead()

@@ -21,7 +21,7 @@ namespace Diver_Down.Actor
         private float xSpeedMax;
         private IGameObjectMediator mediator;
         private Vector2 slideModify;
-        private bool gool;
+        private bool goal;
         private Motion motion;
         private float hp;
         bool change;
@@ -36,7 +36,7 @@ namespace Diver_Down.Actor
             ySpeedMax=4;
             xSpeedMax=8;
             hp = 1000;
-            gool = false;
+            goal = false;
             motion = new Motion();
             for (int i = 0; i < 2; i++)
             {
@@ -55,6 +55,8 @@ namespace Diver_Down.Actor
         {
             if (gameObject is Block)
                 hitBlock(gameObject);
+            if (gameObject is GoalBlock)
+                goal = true;
         }
         public override void Updata(GameTime gameTime)
         {
@@ -119,6 +121,10 @@ namespace Diver_Down.Actor
         private void UpdateMotion()
         {
             
+        }
+        public bool GetGoal()
+        {
+            return goal;
         }
     }
 }

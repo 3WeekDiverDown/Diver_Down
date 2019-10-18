@@ -31,3 +31,4 @@ D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Textu
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\P1.xnb
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\P2.xnb
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\brock1.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\brock2.xnb
