@@ -17,6 +17,7 @@ namespace Diver_Down.Scene
         Map map;
         GameObjectManager gameObjectManager;
         Player player;
+        float checkTime;
         Timer timer;
         TimerUI timerUI;
         public GamePlay()
@@ -67,7 +68,10 @@ namespace Diver_Down.Scene
             if (player.IsDead())
                 isEndFlag = true;
             if (player.GetGoal())
+            {
+                checkTime =timer.Now();
                 isEndFlag = true;
+            }
             gameObjectManager.Update(gameTime);
         }
     }
