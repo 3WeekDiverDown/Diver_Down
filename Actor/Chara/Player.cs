@@ -74,9 +74,9 @@ namespace Diver_Down.Actor
             }
             velocity.Y = (ySpeedMax < velocity.Y) ? ySpeedMax : velocity.Y;
             velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
-            position = position + velocity;
-            if (velocity.X >= 0)
+            if (velocity.X <= 0)
                 velocity.X -= 0.07f;
+            position = position + velocity;
             setDisplayModify();
         }
         private void hitBlock(GameObject gameObject)
