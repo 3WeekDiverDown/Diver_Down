@@ -46,6 +46,7 @@
     <Compile Include="Actor\Blocks\Rock.cs" />
     <Compile Include="Actor\Blocks\Space.cs" />
     <Compile Include="Actor\Chara\Player.cs" />
+    <Compile Include="Actor\Chara\Shark.cs" />
     <Compile Include="Actor\GameObject.cs" />
     <Compile Include="Actor\GameObjectID.cs" />
     <Compile Include="Actor\GameObjectManager.cs" />
