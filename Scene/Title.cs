@@ -42,7 +42,7 @@ namespace Diver_Down.Scene
 
         public Scene Next()
         {
-            //sound.StopBGM();
+            sound.StopBGM();
             return Scene.GamePlay;
         }
 
@@ -53,7 +53,7 @@ namespace Diver_Down.Scene
 
         public void Update(GameTime gameTime)
         {
-            //sound.PlayBGM("");
+            sound.PlayBGM("testBGM2");
             if(Input.GetKeyTrigger(Keys.Space))
             {
                 isEndFlag = true;

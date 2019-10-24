@@ -68,3 +68,7 @@ D:\!K018A1402\2年\後期\チーム製作10月\obj\x86\Debug\Diver_Down.csproj.C
 D:\!K018A1402\2年\後期\チーム製作10月\obj\x86\Debug\Diver_Down.csproj.CopyComplete
 D:\!K018A1402\2年\後期\チーム製作10月\obj\x86\Debug\Diver_Down.exe
 D:\!K018A1402\2年\後期\チーム製作10月\obj\x86\Debug\Diver_Down.pdb
+D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM1.wma
+D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM1.xnb
+D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM2.wma
+D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM2.xnb

@@ -112,3 +112,15 @@
 /processorParam:TextureFormat=Color
 /build:Texture/timer.bmp
 
+#begin BGM/testBGM1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:BGM/testBGM1.mp3
+
+#begin BGM/testBGM2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:BGM/testBGM2.mp3
+
