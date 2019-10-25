@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Diver_Down.Actor;
 using Diver_Down.Device;
 using Diver_Down.Utility;
+using Diver_Down.Actor.Chara;
 
 namespace Diver_Down.Scene
 {
@@ -19,6 +20,8 @@ namespace Diver_Down.Scene
         Player player;
         Timer timer;
         TimerUI timerUI;
+        Shark shark;
+
         public GamePlay()
         {
             isEndFlag = false;
@@ -41,7 +44,9 @@ namespace Diver_Down.Scene
             gameObjectManager.Initialize();
             map = new Map(GameDevice.Instance());
             player = new Player(new Vector2(32 * 2, 32 * 10), GameDevice.Instance(),gameObjectManager);
+            shark = new Shark(new Vector2(32 * 30, 32 * 10), GameDevice.Instance(), gameObjectManager);
             gameObjectManager.Add(player);
+            gameObjectManager.Add(shark);
             map.Load("map.csv", "./csv/");
             timer = new CountUpTimer(50000);
             timerUI = new TimerUI(timer);
