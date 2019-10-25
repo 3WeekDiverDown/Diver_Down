@@ -46,6 +46,7 @@ namespace Diver_Down.Scene
                 {"brock1",path },
                 {"brock2",path },
                 {"timer",path },
+                {"rock2",path },
 
 
                 //必要に応じて自分で追加

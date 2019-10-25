@@ -56,6 +56,11 @@ namespace Diver_Down.Actor
         {
             if (gameObject is Block)
                 hitBlock(gameObject);
+            if(gameObject is Rock)
+            {
+                hitBlock(gameObject);
+                velocity.X = -velocity.X;
+            }
             if (gameObject is GoalBlock)
                 goal = true;
         }
@@ -77,7 +82,7 @@ namespace Diver_Down.Actor
             }
             velocity.Y = (ySpeedMax < velocity.Y) ? ySpeedMax : velocity.Y;
             velocity.X = (xSpeedMax < velocity.X) ? xSpeedMax : velocity.X;
-            if (velocity.X <= 0)
+            if (velocity.X >= 0)
                 velocity.X -= 0.07f;
             position = position + velocity;
             setDisplayModify();

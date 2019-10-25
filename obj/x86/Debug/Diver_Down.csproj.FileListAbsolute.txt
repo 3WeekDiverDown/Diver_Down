@@ -76,3 +76,5 @@ D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\t
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM1.xnb
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM2.wma
 D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM2.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\csv\map2.csv
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\Texture\rock2.xnb

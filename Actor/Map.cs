@@ -27,6 +27,7 @@ namespace Diver_Down.Actor
             objctDict.Add("0", new Space(Vector2.Zero, gameDevice));
             objctDict.Add("1", new Block(Vector2.Zero, gameDevice));
             objctDict.Add("2", new GoalBlock(Vector2.Zero, gameDevice));
+            objctDict.Add("3", new Rock(Vector2.Zero, gameDevice));
             List<GameObject> workList = new List<GameObject>();
             int colCnt = 0;
             foreach (var s in line)

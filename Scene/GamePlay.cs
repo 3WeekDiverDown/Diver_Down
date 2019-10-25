@@ -43,7 +43,7 @@ namespace Diver_Down.Scene
             map = new Map(GameDevice.Instance());
             player = new Player(new Vector2(32 * 2, 32 * 10), GameDevice.Instance(),gameObjectManager);
             gameObjectManager.Add(player);
-            map.Load("map.csv", "./csv/");
+            map.Load("map2.csv", "./csv/");
             timer = new CountUpTimer(50000);
             timerUI = new TimerUI(timer);
             gameObjectManager.Add(map);
