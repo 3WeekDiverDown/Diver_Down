@@ -74,6 +74,7 @@
     <Compile Include="Scene\Title.cs" />
     <Compile Include="Utility\CountDownTimer.cs" />
     <Compile Include="Utility\CountUpTimer.cs" />
+    <Compile Include="Utility\Gauge.cs" />
     <Compile Include="Utility\GameObjectCSVParser.cs" />
     <Compile Include="Utility\Motion.cs" />
     <Compile Include="Utility\Range.cs" />
