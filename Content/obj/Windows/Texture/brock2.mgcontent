@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/brock2.png</SourceFile>
-  <SourceTime>2019-10-18T13:06:25.1064006+09:00</SourceTime>
-  <DestFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/bin/Windows/Texture/brock2.xnb</DestFile>
-  <DestTime>2019-10-25T14:50:49.6570106+09:00</DestTime>
+  <SourceFile>C:/Users/cielfan12/Desktop/2019_10_3Week/Content/Texture/brock2.png</SourceFile>
+  <SourceTime>2019-10-15T15:45:57.7303701+09:00</SourceTime>
+  <DestFile>C:/Users/cielfan12/Desktop/2019_10_3Week/Content/bin/Windows/Texture/brock2.xnb</DestFile>
+  <DestTime>2019-10-25T15:06:09.1926561+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-02T00:05:36+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

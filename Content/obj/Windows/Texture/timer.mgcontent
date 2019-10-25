@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/Texture/timer.bmp</SourceFile>
-  <SourceTime>2019-10-18T15:11:43.3780565+09:00</SourceTime>
-  <DestFile>D:/K018A1700/10月チーム制作/Diver_Down/Content/bin/Windows/Texture/timer.xnb</DestFile>
-  <DestTime>2019-10-25T14:50:49.6889247+09:00</DestTime>
+  <SourceFile>C:/Users/cielfan12/Desktop/2019_10_3Week/Content/Texture/timer.bmp</SourceFile>
+  <SourceTime>2019-10-25T13:07:27.6427345+09:00</SourceTime>
+  <DestFile>C:/Users/cielfan12/Desktop/2019_10_3Week/Content/bin/Windows/Texture/timer.xnb</DestFile>
+  <DestTime>2019-10-25T15:06:09.2066201+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-02T00:05:36+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
