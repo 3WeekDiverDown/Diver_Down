@@ -41,7 +41,7 @@ namespace Diver_Down.Actor
             motion = new Motion();
             for (int i = 0; i < 2; i++)
             {
-                motion.Add(i, new Rectangle(64, 64 * (i / 2), 64, 64));
+                motion.Add(i, new Rectangle(64, 66 * (i / 2), 64, 62));
             }
             motion.Initialize(new Range(0, 1), new CountDownTimer(0.2f));
         }
