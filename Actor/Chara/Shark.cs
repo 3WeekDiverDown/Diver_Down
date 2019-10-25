@@ -11,14 +11,17 @@ namespace Diver_Down.Actor.Chara
     class Shark : GameObject
     {
         private Vector2 velocity;
+        private IGameObjectMediator mediator;
+        private GameObject player;
+        private int p = 320;
 
-        public Shark(Vector2 position, GameDevice gameDevice)
+        public Shark(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
                : base("P2", position, 64, 64, gameDevice)
         {
-            velocity = new Vector2(-5, 0);
+            this.mediator = mediator;
         }
 
-        public Shark(Shark other) : this(other.position, other.gameDevice)
+        public Shark(Shark other) : this(other.position, other.gameDevice, other.mediator)
         {
 
         }
@@ -35,7 +38,27 @@ namespace Diver_Down.Actor.Chara
 
         public override void Updata(GameTime gameTime)
         {
-            position += velocity;
+            player = mediator.GetPlayer();
+            Vector2 otherPosition = player.GetPosition();
+
+            if(otherPosition.X - position.X <= p && otherPosition.X - position.X >= -p)
+            {
+                if (otherPosition.Y - position.Y <= p && otherPosition.X - position.X >= -p)
+                {
+                    velocity = otherPosition - position;
+                    velocity.Normalize();
+                }
+                else
+                {
+                    velocity = Vector2.Zero;
+                }
+            }
+            else
+            {
+                velocity = Vector2.Zero;
+            }
+
+            position += velocity * 3;
         }
     }
 }

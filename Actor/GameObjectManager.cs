@@ -116,6 +116,13 @@ namespace Diver_Down.Actor
         }
         public GameObject GetPlayer()
         {
+            foreach (var c in gameObjectList)
+            {
+                if(c is Player)
+                {
+                    return c;
+                }
+            }
             return null;
         }
         public bool IsPlayerDead()
