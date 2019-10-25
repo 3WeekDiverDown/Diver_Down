@@ -71,7 +71,6 @@ namespace Diver_Down
         /// </summary>
         protected override void LoadContent()
         {
-
             renderer = gameDevice.GetRenderer();
 
             renderer.LoadContent("load", "./Texture/");
@@ -83,6 +82,11 @@ namespace Diver_Down
             colors[0] = new Color(0, 0, 0);
             fade.SetData(colors);
             renderer.LoadContent("fade", fade);
+
+            Texture2D gauge = new Texture2D(GraphicsDevice, 1, 1);
+            colors[0] = new Color(0, 255, 51);
+            gauge.SetData(colors);
+            renderer.LoadContent("gauge", gauge);
 
             Sound sound = gameDevice.GetSound();
             string filepath = "./Sound/";

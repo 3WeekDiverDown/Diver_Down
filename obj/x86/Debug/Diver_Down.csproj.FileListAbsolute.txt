@@ -72,3 +72,7 @@ D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM
 D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM1.xnb
 D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM2.wma
 D:\!K018A1402\2年\後期\チーム製作10月\bin\Windows\x86\Debug\Content\BGM\testBGM2.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM1.wma
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM1.xnb
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM2.wma
+D:\K018A1700\10月チーム制作\Diver_Down\bin\Windows\x86\Debug\Content\BGM\testBGM2.xnb
