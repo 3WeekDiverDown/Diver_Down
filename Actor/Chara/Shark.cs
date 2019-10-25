@@ -16,7 +16,7 @@ namespace Diver_Down.Actor.Chara
         private int p = 320;
 
         public Shark(Vector2 position, GameDevice gameDevice, IGameObjectMediator mediator)
-               : base("P2", position, 64, 64, gameDevice)
+               : base("shark1", position, 64, 64, gameDevice)
         {
             this.mediator = mediator;
         }

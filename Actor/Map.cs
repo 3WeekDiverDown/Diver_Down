@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Diver_Down.Device;
 using Diver_Down.Utility;
 using Diver_Down.Actor.Blocks;
+using Diver_Down.Actor.Chara;
 
 namespace Diver_Down.Actor
 {
