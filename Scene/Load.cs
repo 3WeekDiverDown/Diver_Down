@@ -63,12 +63,13 @@ namespace Diver_Down.Scene
         private string[,] BGMMatrix()
         {
             //テクスチャディレクトリのデフォルトパス
-            string path = "./Sound/";
+            string path = "./BGM/";
 
             //BGM(MP3)読み込み対象データ
             string[,] data = new string[,]
             {
-                //{ "titlebgm", path},
+                { "testBGM1", path},
+                { "testBGM2", path},
 
                 //必要に応じて自分で追加
             };
